@@ -17,7 +17,7 @@
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
-  <script src="script.js"></script>
+
   <body>
     <!-- Sidebar start -->
 
@@ -67,33 +67,41 @@
         <p>Please provide your name, email address, and phone number.</p>
 
         <form action="" method="get" id="step-1-form">
-          <label for="name">name</label>
-          <input
-            type="text"
-            placeholder="e.g. Stephen King"
-            id="name"
-            name="name"
-            required
-          />
-          <label for="email">Email Address</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="e.g. stephenking@lorem.com"
-            required
-          />
-          <label for="phone-no">Phone Number</label>
-          <input
-            type="tel"
-            id="phone-no"
-            name="phone-no"
-            placeholder="e.g. +1 234 567 890"
-            required
-          />
-          <button type="submit" id="step-1-next-btn" class="btn">
-            Next Step
-          </button>
+          <div class="input-container">
+            <label for="name">name</label>
+            <input
+              type="text"
+              placeholder="e.g. Stephen King"
+              id="name"
+              name="name"
+              required
+            />
+          </div>
+          <div class="input-container">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="e.g. stephenking@lorem.com"
+              required
+            />
+          </div>
+          <div class="input-container">
+            <label for="phone-no">Phone Number</label>
+            <input
+              type="tel"
+              id="phone-no"
+              name="phone-no"
+              placeholder="e.g. +1 234 567 890"
+              required
+            />
+          </div>
+          <div class="input-container">
+            <button type="submit" id="step-1-next-btn" class="btn">
+              Next Step
+            </button>
+          </div>
         </form>
       </section>
     </main>
