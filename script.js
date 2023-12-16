@@ -17,7 +17,17 @@ personalInfo.querySelectorAll("input").forEach((field) => {
 
 personalInfo.addEventListener("submit", (e) => {
   e.preventDefault();
+
+  let nameRegex = new RegExp("^([a-zA-Z '.-]{2,75})$");
+  let emailRegex = new RegExp(
+    "^([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-]+)$"
+  );
   let data = new FormData(personalInfo);
   let userData = Object.fromEntries(data);
-  console.log(userData);
+  if (nameRegex.test(userData.name) && emailRegex.test(userData.email)) {
+    sessionStorage.setItem("personalInfo", JSON.stringify(userData));
+    location.href = "./plan-selection-page.html";
+  }
 });
+
+//JS for plan-selection-page.html
