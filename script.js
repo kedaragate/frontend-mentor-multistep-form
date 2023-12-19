@@ -1,4 +1,15 @@
-let personalInfo = document.getElementById("step-1-form");
+const personalInfo = document.getElementById("step-1-form");
+const stepOneIndicator = document.querySelector(".step-1-indicator");
+
+function displayStepIndicator(element) {
+  element.style = "background-color:hsl(206, 94%, 87%); color:black";
+}
+
+if (location.pathname === "/index.html") {
+  console.log(true);
+  displayStepIndicator(stepOneIndicator);
+}
+console.log("next");
 
 personalInfo.querySelectorAll("input").forEach((field) => {
   field.addEventListener("blur", () => {
@@ -17,7 +28,7 @@ personalInfo.querySelectorAll("input").forEach((field) => {
 
 personalInfo.addEventListener("submit", (e) => {
   e.preventDefault();
-
+  console.log("submit");
   let nameRegex = new RegExp("^([a-zA-Z '.-]{2,75})$");
   let emailRegex = new RegExp(
     "^([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-]+)$"
@@ -26,7 +37,8 @@ personalInfo.addEventListener("submit", (e) => {
   let userData = Object.fromEntries(data);
   if (nameRegex.test(userData.name) && emailRegex.test(userData.email)) {
     sessionStorage.setItem("personalInfo", JSON.stringify(userData));
-    location.href = "./plan-selection-page.html";
+    location.href = "/plan-selection-page.html";
+    console.log(true);
   }
 });
 

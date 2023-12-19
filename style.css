@@ -86,11 +86,15 @@ body {
 }
 
 .step-no-indicator {
-  padding: 0.5rem;
+  width: 2rem;
+  height: 2rem;
   margin-right: 1rem;
-  border-radius: 100%;
+  border-radius: 50%;
   border: 1px solid var(--Alabaster);
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .step-number-in-words {
@@ -116,13 +120,14 @@ body {
   margin-bottom: 1rem;
 }
 
-form {
+/* step 1 form styling start*/
+#step-1-form {
   text-transform: capitalize;
   display: flex;
   flex-direction: column;
 }
 
-.input-container {
+#step-1-form > .input-container {
   width: 100%;
   height: fit-content;
   display: flex;
@@ -130,12 +135,12 @@ form {
   position: relative;
 }
 
-.input-container > label {
+#step-1-form > .input-container > label {
   color: var(--Marine-blue);
   margin-bottom: 0.5rem;
   font-size: 0.8rem;
 }
-.input-container > input {
+#step-1-form.input-container > input {
   padding: 0.5rem;
   margin-bottom: 1rem;
 
@@ -143,10 +148,59 @@ form {
   border: 0.5px solid var(--Cool-gray);
   cursor: pointer;
 }
-.input-container > input:focus {
+#step-1-form > .input-container > input:focus {
   outline: none;
   border: 0.5px solid var(--Marine-blue);
 }
+
+/*step 1 form styling end */
+
+/* step 2 form styling start*/
+#step-2-form {
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+}
+
+#step-2-form > .input-container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#step-2-form > .input-container > .plan-div {
+  width: 5rem;
+  height: 7rem;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  border: 1px solid red;
+}
+
+#step-2-form > .input-container > .plan-div > label {
+  color: var(--Marine-blue);
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+#step-2-form > .input-container > .plan-div > input {
+  appearance: none;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  border: 0.5px solid var(--Cool-gray);
+  cursor: pointer;
+}
+
+#step-2-form > .input-container > .plan-div > input:checked {
+  outline: none;
+  border: 0.5px solid var(--Marine-blue);
+}
+
+/*step 1 form styling end */
 
 .btn {
   align-self: flex-end;
@@ -177,6 +231,11 @@ form {
 .attribution {
   font-size: 11px;
   text-align: center;
+  position: absolute;
+
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
