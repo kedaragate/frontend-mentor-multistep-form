@@ -96,10 +96,20 @@
               >
             </div>
           </div>
-
-          <button type="submit" id="step-2-next-btn" class="btn">
-            Next Step
-          </button>
+          <div class="monthly-yearly-toggle-div">
+            <label for="plan-toggle-switch">Monthly</label>
+            <div class="switch-div">
+              <span class="slider"></span>
+              <input
+                type="checkbox"
+                value="monthly"
+                id="plan-toggle-switch"
+                name="billing-duration"
+              />
+            </div>
+            <label for="plan-toggle-switch">Yearly</label>
+          </div>
+          <button type="submit" class="btn step-2-next-btn">Next Step</button>
         </form>
       </section>
     </main>
