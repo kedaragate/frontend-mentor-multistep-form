@@ -139,6 +139,7 @@ body {
   color: var(--Marine-blue);
   margin-bottom: 0.5rem;
   font-size: 0.8rem;
+  font-weight: 700;
 }
 #step-1-form > .input-container > input {
   padding: 0.5rem;
@@ -238,6 +239,7 @@ body {
 
 .monthly-yearly-toggle-div > label {
   margin: 1rem;
+  font-size: 0.8rem;
 }
 
 #plan-toggle-switch {
@@ -280,6 +282,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+#go-back-link {
+  text-decoration: none;
 }
 
 /*step 2 form styling end */

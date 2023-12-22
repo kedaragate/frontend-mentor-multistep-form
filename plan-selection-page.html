@@ -59,6 +59,7 @@
                 id="plan-option-1"
                 name="plan-option"
                 value="arcade"
+                checked
               />
               <img
                 src="./assets/images/icon-arcade.svg"
@@ -97,14 +98,21 @@
             </div>
           </div>
           <div class="monthly-yearly-toggle-div">
-            <label for="plan-toggle-switch">Monthly</label>
+            <label for="plan-toggle-switch" class="monthly-lable"
+              >Monthly</label
+            >
             <input
               type="checkbox"
-              value="monthly"
               id="plan-toggle-switch"
               name="billing-duration"
             />
-            <label for="plan-toggle-switch">Yearly</label>
+            <input
+              type="hidden"
+              value="monthly"
+              name="billing-duration"
+              class="default-plan-duration"
+            />
+            <label for="plan-toggle-switch" class="yearly-lable">Yearly</label>
           </div>
           <div class="links-button-div">
             <a href="./index.html" id="go-back-link">Go Back</a>
