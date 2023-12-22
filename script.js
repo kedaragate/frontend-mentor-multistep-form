@@ -34,7 +34,7 @@ personalInfo.addEventListener("submit", (e) => {
     "^([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-]+)$"
   );
   let data = new FormData(personalInfo);
-  let userData = Object.fromEntries(data);
+  let userData = [Object.fromEntries(data)];
   if (nameRegex.test(userData.name) && emailRegex.test(userData.email)) {
     sessionStorage.setItem("personalInfo", JSON.stringify(userData));
     location.href = "/plan-selection-page.html";

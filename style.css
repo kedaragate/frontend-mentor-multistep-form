@@ -171,7 +171,7 @@ body {
   width: 100%;
   height: fit-content;
   display: flex;
-
+  justify-content: space-between;
   align-items: center;
   position: relative;
 }
@@ -285,6 +285,8 @@ body {
 }
 #go-back-link {
   text-decoration: none;
+  font-size: 0.8rem;
+  color: var(--Marine-blue);
 }
 
 /*step 2 form styling end */
