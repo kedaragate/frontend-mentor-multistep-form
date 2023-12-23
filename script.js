@@ -29,15 +29,17 @@ personalInfoForm.querySelectorAll("input").forEach((field) => {
 personalInfoForm.addEventListener("submit", (e) => {
   e.preventDefault();
   console.log("submit");
-  let nameRegex = new RegExp("^([a-zA-Z '.-]{2,75})$");
+  let nameRegex = new RegExp(/^([a-zA-Z '.-]{2,75})$/);
   let emailRegex = new RegExp(
-    `/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/`
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/
   );
   let data = new FormData(personalInfoForm);
   let userData = Object.fromEntries(data);
 
-  if (nameRegex.test(userData.name)) {
-    sessionStorage.setItem("personalInfo", JSON.stringify(userData));
+  if (nameRegex.test(userData.name) && emailRegex.test(userData.email)) {
+    let personalData = [];
+    personalData.push(userData);
+    sessionStorage.setItem("personalInfo", JSON.stringify(personalData));
     location.href = "/plan-selection-page.html";
   }
 });

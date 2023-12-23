@@ -41,9 +41,6 @@ planSelectionInfo.addEventListener("submit", (e) => {
   let formData = Object.fromEntries(data);
   console.log(formData);
   const userData = {
-    name: personalInfo["name"],
-    email: personalInfo["email"],
-    phoneNumber: personalInfo["phoneNumber"],
     planOption: formData["plan-option"],
     billingDuration: formData["billing-duration"],
   };

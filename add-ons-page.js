@@ -14,7 +14,6 @@ addOnsDataElement.addEventListener("submit", (e) => {
   e.preventDefault();
   console.log(e.target);
   const data = new FormData(e.target);
-  console.log(data);
+
   const addOnsData = Object.fromEntries(data);
-  console.log(addOnsData);
 });
