@@ -39,7 +39,7 @@ planSelectionInfo.addEventListener("submit", (e) => {
 
   let data = new FormData(e.target);
   let formData = Object.fromEntries(data);
-
+  console.log(formData);
   const userData = {
     name: personalInfo["name"],
     email: personalInfo["email"],

@@ -309,6 +309,18 @@ body {
   border-radius: 1rem;
 }
 
+.add-ons-info-div > h3 {
+  color: var(--Marine-blue);
+}
+.add-ons-info-div > p {
+  color: var(--Cool-gray);
+  font-size: 0.8rem;
+}
+.add-ons-price-div > span {
+  color: var(--Cool-gray);
+  font-size: 0.9rem;
+}
+
 .step-3-input-container:hover {
   border: 1px solid var(--Purplish-blue);
   transition: 0.5s ease-in-out;
