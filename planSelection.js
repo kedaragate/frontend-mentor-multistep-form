@@ -5,7 +5,7 @@ const nextButton = document.querySelector(".step-2-next-btn");
 const toggleSwitchContainer = document.querySelector(
   ".monthly-yearly-toggle-div"
 );
-console.log(toggleSwitchContainer);
+
 const defaultPlanDuration = document.querySelector(".default-plan-duration");
 const monthlyLable = document.querySelector(".monthly-lable");
 const yearlyLable = document.querySelector(".yearly-lable");
@@ -17,7 +17,6 @@ function displayStepIndicator(element) {
 }
 
 if (location.pathname === "/plan-selection-page.html") {
-  console.log(true);
   displayStepIndicator(stepTwoIndicator);
 }
 
@@ -37,15 +36,20 @@ toggleSwitch.addEventListener("click", (e) => {
 
 planSelectionInfo.addEventListener("submit", (e) => {
   e.preventDefault();
-  const userData = [];
-  console.log(e.target);
+
   let data = new FormData(e.target);
   let formData = Object.fromEntries(data);
-  console.log(formData);
-  personalInfo.planOption = formData["plan-option"];
-  personalInfo.billingDuration = formData["billing-duration"];
-  userData.push(personalInfo);
+
+  const userData = {
+    name: personalInfo["name"],
+    email: personalInfo["email"],
+    phoneNumber: personalInfo["phoneNumber"],
+    planOption: formData["plan-option"],
+    billingDuration: formData["billing-duration"],
+  };
+
   sessionStorage.setItem("userData", JSON.stringify(userData));
 
   console.log(JSON.parse(sessionStorage.getItem("userData")));
+  location.href = "/add-ons-page.html";
 });
