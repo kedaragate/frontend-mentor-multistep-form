@@ -228,6 +228,7 @@ body {
 #step-2-form > .input-container > .plan-div > input:hover {
   outline: none;
   border: 0.5px solid var(--Marine-blue);
+  transition: 0.5s ease-in-out;
 }
 
 .monthly-yearly-toggle-div {
@@ -283,7 +284,7 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-#go-back-link {
+.go-back-link {
   text-decoration: none;
   font-size: 0.8rem;
   color: var(--Marine-blue);
@@ -308,11 +309,20 @@ body {
   border-radius: 1rem;
 }
 
+.step-3-input-container:hover {
+  border: 1px solid var(--Purplish-blue);
+  transition: 0.5s ease-in-out;
+}
+
 .step-3-input-container > input {
   margin-left: 1rem;
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
+}
+
+.step-3-input-container > input:checked {
+  accent-color: var(--Purplish-blue);
 }
 
 .step-3-input-container > label {
