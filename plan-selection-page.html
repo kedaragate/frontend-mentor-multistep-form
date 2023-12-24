@@ -61,12 +61,18 @@
                 value="arcade"
                 checked
               />
+              <input
+                type="hidden"
+                class="arcadePlanAmount"
+                name="arcadePlanAmount"
+                value="9"
+              />
               <img
                 src="./assets/images/icon-arcade.svg"
                 alt="arcade-plan-icon"
               />
               <label for="plan-option-1"
-                >arcade <span value="9">$9/mo</span></label
+                >arcade <span class="arcade-plan">$9/mo</span></label
               >
             </div>
             <div class="plan-div">
@@ -76,12 +82,18 @@
                 name="plan-option"
                 value="advanced"
               />
+              <input
+                type="hidden"
+                class="advancedPlanAmount"
+                name="advancedPlanAmount"
+                value="12"
+              />
               <img
                 src="./assets/images/icon-advanced.svg"
                 alt="advanced-plan-icon"
               />
               <label for="plan-option-2"
-                >advanced <span value="12">$12/mo</span></label
+                >advanced <span class="advanced-plan"> >$12/mo</span></label
               >
             </div>
             <div class="plan-div">
@@ -91,9 +103,15 @@
                 name="plan-option"
                 value="pro"
               />
+              <input
+                type="hidden"
+                class="proPlanAmount"
+                name="proPlanAmount"
+                value="15"
+              />
               <img src="./assets/images/icon-pro.svg" alt="pro-plan-icon" />
               <label for="plan-option-3"
-                >pro <span value="15">$15/mo</span></label
+                >pro <span class="pro-plan">$15/mo</span></label
               >
             </div>
           </div>
@@ -101,17 +119,8 @@
             <label for="plan-toggle-switch" class="monthly-lable"
               >Monthly</label
             >
-            <input
-              type="checkbox"
-              id="plan-toggle-switch"
-              name="billing-duration"
-            />
-            <input
-              type="hidden"
-              value="monthly"
-              name="billing-duration"
-              class="default-plan-duration"
-            />
+            <input type="checkbox" id="plan-toggle-switch" name="yearly" />
+
             <label for="plan-toggle-switch" class="yearly-lable">Yearly</label>
           </div>
           <div class="links-button-div">

@@ -6,7 +6,6 @@ const toggleSwitchContainer = document.querySelector(
   ".monthly-yearly-toggle-div"
 );
 
-const defaultPlanDuration = document.querySelector(".default-plan-duration");
 const monthlyLable = document.querySelector(".monthly-lable");
 const yearlyLable = document.querySelector(".yearly-lable");
 
@@ -22,15 +21,36 @@ if (location.pathname === "/plan-selection-page.html") {
 
 toggleSwitch.addEventListener("click", (e) => {
   if (e.target.checked) {
-    toggleSwitch.value = "yearly";
-    defaultPlanDuration.disabled = true;
     monthlyLable.style.color = "hsl(231, 11%, 63%)";
     yearlyLable.style.color = "hsl(213, 96%, 18%)";
   } else {
-    defaultPlanDuration.disabled = false;
-    toggleSwitch.value = "monthly";
     yearlyLable.style.color = "hsl(231, 11%, 63%)";
     monthlyLable.style.color = "hsl(213, 96%, 18%)";
+  }
+});
+
+const arcadePlanAmountElement = document.querySelector(".arcade-plan");
+const advancedPlanAmountElement = document.querySelector(".advanced-plan");
+const proPlanAmountElement = document.querySelector(".pro-plan");
+const arcadePlanAmount = document.querySelector(".arcadePlanAmount");
+const advancedPlanAmount = document.querySelector(".advancedPlanAmount");
+const proPlanAmount = document.querySelector(".proPlanAmount");
+
+toggleSwitch.addEventListener("change", () => {
+  if (toggleSwitch.checked) {
+    arcadePlanAmount.value = 90;
+    arcadePlanAmountElement.textContent = "90/yr";
+    advancedPlanAmount.value = 120;
+    advancedPlanAmountElement.textContent = "120/yr";
+    proPlanAmount.value = 150;
+    proPlanAmountElement.textContent = "150/yr";
+  } else {
+    arcadePlanAmount.value = 9;
+    arcadePlanAmountElement.textContent = "9/mo";
+    advancedPlanAmount.value = 12;
+    advancedPlanAmountElement.textContent = "12/mo";
+    proPlanAmount.value = 15;
+    proPlanAmountElement.textContent = "15/mo";
   }
 });
 
@@ -48,5 +68,5 @@ planSelectionInfo.addEventListener("submit", (e) => {
   sessionStorage.setItem("userData", JSON.stringify(userData));
 
   console.log(JSON.parse(sessionStorage.getItem("userData")));
-  location.href = "/add-ons-page.html";
+  // location.href = "/add-ons-page.html";
 });
