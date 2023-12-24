@@ -29,37 +29,46 @@ toggleSwitch.addEventListener("click", (e) => {
   }
 });
 
-const arcadePlanAmountElement = document.querySelector(".arcade-plan");
-const advancedPlanAmountElement = document.querySelector(".advanced-plan");
-const proPlanAmountElement = document.querySelector(".pro-plan");
-const arcadePlanAmount = document.querySelector(".arcadePlanAmount");
-const advancedPlanAmount = document.querySelector(".advancedPlanAmount");
-const proPlanAmount = document.querySelector(".proPlanAmount");
+const arcadePlanAmountTextDisplayElement =
+  document.querySelector(".arcade-plan");
+const advancedPlanAmountTextDisplayElement =
+  document.querySelector(".advanced-plan");
+const proPlanAmountTextDisplayElement = document.querySelector(".pro-plan");
+
+const arcadePlan = document.querySelector("#plan-option-1");
+const advancedPlan = document.querySelector("#plan-option-2");
+const proPlan = document.querySelector("#plan-option-3");
 
 toggleSwitch.addEventListener("change", () => {
   if (toggleSwitch.checked) {
-    arcadePlanAmount.value = 90;
-    arcadePlanAmountElement.textContent = "90/yr";
-    advancedPlanAmount.value = 120;
-    advancedPlanAmountElement.textContent = "120/yr";
-    proPlanAmount.value = 150;
-    proPlanAmountElement.textContent = "150/yr";
+    arcadePlan.dataset.amount = 90;
+    arcadePlanAmountTextDisplayElement.textContent = "90/yr";
+    arcadePlan.dataset.planDuration = "yearly";
+    advancedPlan.dataset.amount = 120;
+    advancedPlanAmountTextDisplayElement.textContent = "120/yr";
+    advancedPlan.dataset.planDuration = "yearly";
+    proPlan.dataset.amount = 150;
+    proPlanAmountTextDisplayElement.textContent = "150/yr";
+    proPlan.dataset.planDuration = "yearly";
   } else {
-    arcadePlanAmount.value = 9;
-    arcadePlanAmountElement.textContent = "9/mo";
-    advancedPlanAmount.value = 12;
-    advancedPlanAmountElement.textContent = "12/mo";
-    proPlanAmount.value = 15;
-    proPlanAmountElement.textContent = "15/mo";
+    arcadePlan.dataset.amount = 9;
+    arcadePlanAmountTextDisplayElement.textContent = "9/mo";
+    arcadePlan.dataset.planDuration = "monthly";
+    advancedPlan.dataset.amount = 12;
+    advancedPlanAmountTextDisplayElement.textContent = "12/mo";
+    advancedPlan.dataset.planDuration = "monthly";
+    proPlan.dataset.amount = 15;
+    proPlanAmountTextDisplayElement.textContent = "15/mo";
+    proPlan.dataset.planDuration = "monthly";
   }
 });
 
-planSelectionInfo.addEventListener("submit", (e) => {
+/*planSelectionInfo.addEventListener("submit", (e) => {
   e.preventDefault();
 
   let data = new FormData(e.target);
   let formData = Object.fromEntries(data);
-  console.log(formData);
+
   const userData = {
     planOption: formData["plan-option"],
     billingDuration: formData["billing-duration"],
@@ -69,4 +78,32 @@ planSelectionInfo.addEventListener("submit", (e) => {
 
   console.log(JSON.parse(sessionStorage.getItem("userData")));
   // location.href = "/add-ons-page.html";
+});
+*/
+
+nextButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  const selectedPlan = [];
+  planSelectionInfo.querySelectorAll("input[type = radio]").forEach((ele) => {
+    console.log(ele);
+    if (ele.checked && personalInfo) {
+      console.log(ele.value, ele.dataset.amount, ele.dataset.planDuration);
+
+      selectedPlan.push({
+        name: personalInfo[0].name,
+        email: personalInfo[0].email,
+        phoneNumber: personalInfo[0].phoneNumber,
+        plan: ele.value,
+        amount: ele.dataset.amount,
+        planDuration: ele.dataset.planDuration,
+      });
+    }
+    if (!personalInfo) {
+      location.href = "/index.html";
+    }
+  });
+
+  sessionStorage.setItem("userData", JSON.stringify(selectedPlan));
+  sessionStorage.removeItem("personalInfo");
+  location.href = "/add-ons-page.html";
 });
