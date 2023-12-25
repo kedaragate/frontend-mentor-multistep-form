@@ -3,14 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/images/favicon-32x32.png"
+    />
     <title>Frontend Mentor | Multi-step form</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
     <main class="container">
       <section class="Steps-bg-img-container">
         <img
-          src="./assets/images/bg-sidebar-desktop.svg"
+          src="../assets/images/bg-sidebar-desktop.svg"
           alt="steps-background-image"
         />
         <div class="steps-display-container">
@@ -65,7 +71,7 @@
               />
 
               <img
-                src="./assets/images/icon-arcade.svg"
+                src="../assets/images/icon-arcade.svg"
                 alt="arcade-plan-icon"
               />
               <label for="plan-option-1"
@@ -83,7 +89,7 @@
               />
 
               <img
-                src="./assets/images/icon-advanced.svg"
+                src="../assets/images/icon-advanced.svg"
                 alt="advanced-plan-icon"
               />
               <label for="plan-option-2"
@@ -100,7 +106,7 @@
                 data-plan-duration="monthly"
               />
 
-              <img src="./assets/images/icon-pro.svg" alt="pro-plan-icon" />
+              <img src="../assets/images/icon-pro.svg" alt="pro-plan-icon" />
               <label for="plan-option-3"
                 >pro <span class="pro-plan">$15/mo</span></label
               >
@@ -115,7 +121,10 @@
             <label for="plan-toggle-switch" class="yearly-lable">Yearly</label>
           </div>
           <div class="links-button-div">
-            <a href="./index.html" id="step-2-go-back-link" class="go-back-link"
+            <a
+              href="../index.html"
+              id="step-2-go-back-link"
+              class="go-back-link"
               >Go Back</a
             >
             <button type="submit" class="btn step-2-next-btn">Next Step</button>
@@ -170,6 +179,6 @@
       >.
     </div>
 
-    <script src="planSelection.js"></script>
+    <script src="../planSelection.js"></script>
   </body>
 </html>

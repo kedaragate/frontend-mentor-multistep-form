@@ -3,14 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/images/favicon-32x32.png"
+    />
     <title>Frontend Mentor | Multi-step form</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
     <main class="container">
       <section class="Steps-bg-img-container">
         <img
-          src="./assets/images/bg-sidebar-desktop.svg"
+          src="../assets/images/bg-sidebar-desktop.svg"
           alt="steps-background-image"
         />
         <div class="steps-display-container">
@@ -57,7 +63,7 @@
               type="checkbox"
               name="onlineService"
               id="onlineService"
-              value="1"
+              data-add-on-service-amount="1"
             />
 
             <label for="onlineService">
@@ -65,7 +71,9 @@
                 <h3>Online Service</h3>
                 <p>Access to multiplayer games</p>
               </div>
-              <div class="add-ons-price-div"><span>+$1/mo</span></div>
+              <div class="add-ons-price-div">
+                <span id="online-service-text">+$1/mo</span>
+              </div>
             </label>
           </div>
 
@@ -74,7 +82,7 @@
               type="checkbox"
               name="largerStorage"
               id="largerStorage"
-              value="2"
+              data-add-on-service-amount="2"
             />
 
             <label for="largerStorage">
@@ -82,7 +90,9 @@
                 <h3>Larger Storage</h3>
                 <p>Extra 1TB of cloud save</p>
               </div>
-              <div class="add-ons-price-div"><span>+$2/mo</span></div>
+              <div class="add-ons-price-div">
+                <span id="larger-storage-text">+$2/mo</span>
+              </div>
             </label>
           </div>
 
@@ -91,7 +101,7 @@
               type="checkbox"
               name="customizableProfile"
               id="customizableProfile"
-              value="2"
+              data-add-on-service-amount="2"
             />
 
             <label for="customizableProfile">
@@ -99,7 +109,9 @@
                 <h3>Customizable Profile</h3>
                 <p>Custom theme on your profile</p>
               </div>
-              <div class="add-ons-price-div"><span>+$2/mo</span></div>
+              <div class="add-ons-price-div">
+                <span id="customizable-profile-text">+$2/mo</span>
+              </div>
             </label>
           </div>
           <div class="links-button-div">
@@ -161,6 +173,6 @@
       >.
     </div>
 
-    <script src="add-ons-page.js"></script>
+    <script src="../add-ons-page.js"></script>
   </body>
 </html>

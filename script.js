@@ -40,8 +40,15 @@ personalInfoForm.addEventListener("submit", (e) => {
     let personalData = [];
     personalData.push(userData);
     sessionStorage.setItem("personalInfo", JSON.stringify(personalData));
-    location.href = "/plan-selection-page.html";
+    location.href = "pages/plan-selection-page.html";
   }
 });
-
-//JS for plan-selection-page.html
+const userData = JSON.parse(sessionStorage.getItem("personalInfo"));
+const customerName = document.getElementById("name");
+const customerEmail = document.getElementById("email");
+const customerPhoneNumber = document.getElementById("phone-no");
+if (userData) {
+  customerName.value = userData[0].name;
+  customerEmail.value = userData[0].email;
+  customerPhoneNumber.value = userData[0].phoneNumber;
+}

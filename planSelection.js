@@ -15,7 +15,7 @@ function displayStepIndicator(element) {
   element.style = "background-color:hsl(206, 94%, 87%); color:black";
 }
 
-if (location.pathname === "/plan-selection-page.html") {
+if (location.pathname === "/pages/plan-selection-page.html") {
   displayStepIndicator(stepTwoIndicator);
 }
 
@@ -63,24 +63,6 @@ toggleSwitch.addEventListener("change", () => {
   }
 });
 
-/*planSelectionInfo.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  let data = new FormData(e.target);
-  let formData = Object.fromEntries(data);
-
-  const userData = {
-    planOption: formData["plan-option"],
-    billingDuration: formData["billing-duration"],
-  };
-
-  sessionStorage.setItem("userData", JSON.stringify(userData));
-
-  console.log(JSON.parse(sessionStorage.getItem("userData")));
-  // location.href = "/add-ons-page.html";
-});
-*/
-
 nextButton.addEventListener("click", (e) => {
   e.preventDefault();
   const selectedPlan = [];
@@ -93,17 +75,34 @@ nextButton.addEventListener("click", (e) => {
         name: personalInfo[0].name,
         email: personalInfo[0].email,
         phoneNumber: personalInfo[0].phoneNumber,
-        plan: ele.value,
-        amount: ele.dataset.amount,
-        planDuration: ele.dataset.planDuration,
+        basePlan: ele.value,
+        basePlanAmount: Number(ele.dataset.amount),
+        basePlanDuration: ele.dataset.planDuration,
       });
     }
-    if (!personalInfo) {
-      location.href = "/index.html";
-    }
+    //if (!personalInfo) {
+    //location.href = "/index.html";
+    //}
+  });
+  console.log(selectedPlan);
+  sessionStorage.setItem("userData", JSON.stringify(selectedPlan));
+
+  location.href = "/pages/add-ons-page.html";
+});
+
+const selectedPlanData = JSON.parse(sessionStorage.getItem("userData"));
+
+console.log(selectedPlanData);
+
+if (selectedPlanData) {
+  let plan = Array.from(
+    planSelectionInfo.querySelectorAll("input[type = radio]")
+  ).filter((ele) => {
+    return selectedPlanData[0].basePlan === ele.value;
   });
 
-  sessionStorage.setItem("userData", JSON.stringify(selectedPlan));
-  sessionStorage.removeItem("personalInfo");
-  location.href = "/add-ons-page.html";
-});
+  plan[0].checked = true;
+  if (selectedPlanData[0].basePlanDuration === "yearly") {
+    toggleSwitch.checked = true;
+  }
+}
