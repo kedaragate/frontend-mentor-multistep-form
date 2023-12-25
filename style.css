@@ -26,13 +26,18 @@ body {
   background-color: var(--Light-blue);
   max-width: 100vw;
   max-height: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .container {
-  position: absolute;
+  /*position: absolute;
   top: 30%;
   left: 50%;
-  transform: translate(-50%, -30%);
+  transform: translate(-50%, -30%);*/
+  margin-top: 2rem;
   width: 60%;
   height: 80%;
   background-color: var(--Alabaster);
@@ -454,4 +459,77 @@ h2 {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+.mobile-sidebar-img {
+  display: none;
+}
+/* responsive design starts */
+
+@media screen and (min-width: 375px) and (max-width: 1024px) {
+  body {
+    max-width: 100vw;
+    max-height: 100dvh;
+  }
+
+  .Steps-bg-img-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 0;
+  }
+  .form-container {
+    background-color: var(--Alabaster);
+    position: absolute;
+    width: 80%;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+  .input-container {
+    flex-direction: column;
+  }
+  .plan-div {
+    min-width: 100%;
+    height: 25%;
+  }
+  .plan-div > img {
+    left: 50%;
+    right: 0%;
+  }
+
+  .steps-display-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+
+    margin-top: 1rem;
+  }
+  .step-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+  }
+
+  .step-info {
+    display: none;
+  }
+
+  .desktop-sidebar-img {
+    display: none;
+  }
+  .mobile-sidebar-img {
+    display: block;
+
+    border-radius: 0;
+  }
 }
