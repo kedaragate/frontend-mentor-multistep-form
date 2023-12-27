@@ -42,23 +42,23 @@ const proPlan = document.querySelector("#plan-option-3");
 toggleSwitch.addEventListener("change", () => {
   if (toggleSwitch.checked) {
     arcadePlan.dataset.amount = 90;
-    arcadePlanAmountTextDisplayElement.textContent = "90/yr";
+    arcadePlanAmountTextDisplayElement.textContent = "$90/yr";
     arcadePlan.dataset.planDuration = "yearly";
     advancedPlan.dataset.amount = 120;
-    advancedPlanAmountTextDisplayElement.textContent = "120/yr";
+    advancedPlanAmountTextDisplayElement.textContent = "$120/yr";
     advancedPlan.dataset.planDuration = "yearly";
     proPlan.dataset.amount = 150;
-    proPlanAmountTextDisplayElement.textContent = "150/yr";
+    proPlanAmountTextDisplayElement.textContent = "$150/yr";
     proPlan.dataset.planDuration = "yearly";
   } else {
     arcadePlan.dataset.amount = 9;
-    arcadePlanAmountTextDisplayElement.textContent = "9/mo";
+    arcadePlanAmountTextDisplayElement.textContent = "$9/mo";
     arcadePlan.dataset.planDuration = "monthly";
     advancedPlan.dataset.amount = 12;
-    advancedPlanAmountTextDisplayElement.textContent = "12/mo";
+    advancedPlanAmountTextDisplayElement.textContent = "$12/mo";
     advancedPlan.dataset.planDuration = "monthly";
     proPlan.dataset.amount = 15;
-    proPlanAmountTextDisplayElement.textContent = "15/mo";
+    proPlanAmountTextDisplayElement.textContent = "$15/mo";
     proPlan.dataset.planDuration = "monthly";
   }
 });

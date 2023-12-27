@@ -22,7 +22,7 @@ const totalAmountText = document.querySelector(".total-amount-text");
 const totalAmountValueElement = document.querySelector(".total-amount");
 
 choosenBasePlan.textContent = `${allUpdatedData[0].basePlan}(${allUpdatedData[0].basePlanDuration})`;
-basePlanAmount.textContent = `${allUpdatedData[0].basePlanAmount}${
+basePlanAmount.textContent = `$${allUpdatedData[0].basePlanAmount}${
   allUpdatedData[0].basePlanDuration === "monthly" ? "/mo" : "/yr"
 }`;
 
@@ -58,8 +58,8 @@ const totalAmount = getTotalAmount(allUpdatedData[0]);
 
 totalAmountValueElement.textContent = `${
   allUpdatedData[0].basePlanDuration === "monthly"
-    ? totalAmount + "/mo"
-    : totalAmount + "/yr"
+    ? "$" + totalAmount + "/mo"
+    : "$" + totalAmount + "/yr"
 }`;
 
 const confirmButton = document.querySelector(".confirm-btn");
